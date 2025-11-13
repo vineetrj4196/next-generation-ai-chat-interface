@@ -12,13 +12,13 @@ cd <your-project-folder>
 
 Install dependencies:
 
-npm install
-# or
-yarn
-# or
-pnpm install
-# or
-bun install
+## npm install 
+or
+## yarn
+or
+## pnpm install
+or
+## bun install
 
 First, run the development server:
 
