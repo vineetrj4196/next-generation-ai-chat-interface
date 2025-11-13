@@ -32,7 +32,6 @@ export default function Sidebar() {
         border-r border-[var(--color-border)]`}
     >
       <div>
-        {/* Header */}
         <div
           className={`flex items-center p-4 border-b ${
             open ? "justify-between" : "justify-center"
@@ -58,7 +57,6 @@ export default function Sidebar() {
           )}
         </div>
 
-        {/* Search / Collapsed Icons */}
         {open ? (
           <div className="p-3">
             <input
@@ -86,7 +84,6 @@ export default function Sidebar() {
           </div>
         )}
 
-        {/* Chat List */}
         {open && (
           <div className="flex flex-col flex-1 overflow-y-auto p-2 gap-3">
             {chats.length === 0 ? (
@@ -95,7 +92,6 @@ export default function Sidebar() {
               </div>
             ) : (
               <>
-                {/* Pinned Chats */}
                 {filterChats(pinned).length > 0 && (
                   <>
                     <div className="px-3 py-1 text-xs text-gray-500 uppercase">
@@ -108,7 +104,6 @@ export default function Sidebar() {
                   </>
                 )}
 
-                {/* Other Chats */}
                 {filterChats(others).length > 0 ? (
                   filterChats(others).map((chat) => (
                     <ChatListItem key={chat.id} chat={chat} compact={!open} />
@@ -125,7 +120,6 @@ export default function Sidebar() {
         )}
       </div>
 
-      {/* Profile Footer */}
       <ProfileFooter open={open} />
     </aside>
   );

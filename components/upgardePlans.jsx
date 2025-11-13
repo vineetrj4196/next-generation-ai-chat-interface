@@ -28,7 +28,6 @@ export default function ProfileFooter({ open }) {
 
   return (
     <>
-      {/* Profile Footer */}
       <div className="flex items-center justify-between px-4 py-[27.5px] border-t border-[var(--color-border)] cursor-pointer">
         {/* Profile Info */}
         <div
@@ -39,7 +38,6 @@ export default function ProfileFooter({ open }) {
           {open && <span className="font-medium truncate">Vineet RJ</span>}
         </div>
 
-        {/* Upgrade Button */}
         {open && (
           <button
             onClick={() => setModalOpen(true)}
@@ -66,12 +64,10 @@ export default function ProfileFooter({ open }) {
               <Icon icon="mdi:close" width={24} />
             </button>
 
-            {/* Modal Title */}
             <h2 className="text-2xl font-semibold mb-6 text-center">
               Choose Your Plan
             </h2>
 
-            {/* Plans */}
             <div className="flex flex-wrap gap-6 justify-center">
               {plans.map((plan, idx) => (
                 <div
@@ -84,7 +80,6 @@ export default function ProfileFooter({ open }) {
                     </span>
                   )}
 
-                  {/* Plan Header */}
                   <div className="mb-4">
                     <h3 className="font-bold text-xl mb-1">{plan.name}</h3>
                     <span className="text-sm text-[var(--color-muted)]">
@@ -92,7 +87,6 @@ export default function ProfileFooter({ open }) {
                     </span>
                   </div>
 
-                  {/* Features */}
                   <ul className="text-[var(--color-foreground)] text-sm space-y-2 mb-4">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2">
@@ -102,7 +96,6 @@ export default function ProfileFooter({ open }) {
                     ))}
                   </ul>
 
-                  {/* Select Button */}
                   <button
                     onClick={() => setComingSoon(plan.name)}
                     className={`mt-auto w-full text-center py-2 rounded-lg font-medium transition ${
@@ -121,7 +114,6 @@ export default function ProfileFooter({ open }) {
               ))}
             </div>
 
-            {/* Coming Soon Message */}
             {comingSoon && (
               <div className="mt-6 text-center text-[var(--color-primary)] font-semibold text-lg">
                 {comingSoon} plan - Coming Soon! 🚀
