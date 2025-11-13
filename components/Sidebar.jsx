@@ -29,10 +29,10 @@ export default function Sidebar() {
         ${open ? "w-80" : "w-16"}
         bg-[var(--color-sidebar-bg)]
         text-[var(--color-sidebar-text)]
-        border-r border-[var(--color-border)]
-      `}
+        border-r border-[var(--color-border)]`}
     >
       <div>
+        {/* Header */}
         <div
           className={`flex items-center p-4 border-b ${
             open ? "justify-between" : "justify-center"
@@ -58,6 +58,7 @@ export default function Sidebar() {
           )}
         </div>
 
+        {/* Search / Collapsed Icons */}
         {open ? (
           <div className="p-3">
             <input
@@ -85,44 +86,46 @@ export default function Sidebar() {
           </div>
         )}
 
-        <div className="flex flex-col flex-1 overflow-y-auto p-2 gap-3">
-          {chats.length === 0 ? (
-            <div className="text-center text-[var(--color-muted)] py-4">
-              No chats available. Start a new chat!
-            </div>
-          ) : (
-            <>
-              {/* Pinned Chats */}
-              {filterChats(pinned).length > 0 && (
-                <>
-                  {open && (
+        {/* Chat List */}
+        {open && (
+          <div className="flex flex-col flex-1 overflow-y-auto p-2 gap-3">
+            {chats.length === 0 ? (
+              <div className="text-center text-[var(--color-muted)] py-4">
+                No chats available. Start a new chat!
+              </div>
+            ) : (
+              <>
+                {/* Pinned Chats */}
+                {filterChats(pinned).length > 0 && (
+                  <>
                     <div className="px-3 py-1 text-xs text-gray-500 uppercase">
                       Pinned
                     </div>
-                  )}
-                  {filterChats(pinned).map((chat) => (
-                    <ChatListItem key={chat.id} chat={chat} compact={!open} />
-                  ))}
-                  {open && <hr className="my-2 border-[var(--color-border)]" />}
-                </>
-              )}
+                    {filterChats(pinned).map((chat) => (
+                      <ChatListItem key={chat.id} chat={chat} compact={!open} />
+                    ))}
+                    <hr className="my-2 border-[var(--color-border)]" />
+                  </>
+                )}
 
-              {/* Other Chats */}
-              {filterChats(others).length > 0 ? (
-                filterChats(others).map((chat) => (
-                  <ChatListItem key={chat.id} chat={chat} compact={!open} />
-                ))
-              ) : (
-                <div className="text-center text-[var(--color-muted)] py-4">
-                  No chats found matching "
-                  <span className="font-semibold">{search}</span>"
-                </div>
-              )}
-            </>
-          )}
-        </div>
+                {/* Other Chats */}
+                {filterChats(others).length > 0 ? (
+                  filterChats(others).map((chat) => (
+                    <ChatListItem key={chat.id} chat={chat} compact={!open} />
+                  ))
+                ) : (
+                  <div className="text-center text-[var(--color-muted)] py-4">
+                    No chats found matching "
+                    <span className="font-semibold">{search}</span>"
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        )}
       </div>
 
+      {/* Profile Footer */}
       <ProfileFooter open={open} />
     </aside>
   );
