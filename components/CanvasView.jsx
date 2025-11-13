@@ -24,9 +24,9 @@ export default function CanvasView() {
       activeChat.messages.length === 1)
   ) {
     const greetings = [
-      `Hello, ${userName}! How can I help you today? 👋`,
-      `Hey ${userName}, ready to explore something new? 🚀`,
-      `Hi ${userName}! Let's start creating something awesome! 💡`,
+      `Hello, ${userName}! How can I help you today? `,
+      `Hey ${userName}, ready to explore something new? `,
+      `Hi ${userName}! Let's start creating something awesome! `,
     ];
     const msg = greetings[Math.floor(Math.random() * greetings.length)];
 
@@ -35,7 +35,7 @@ export default function CanvasView() {
         <div className="bg-[var(--color-background)] border border-[var(--color-border)] rounded-2xl p-10 shadow-sm">
           <h1 className="text-3xl font-semibold mb-3">{msg}</h1>
           <p className="text-[var(--color-muted)] mb-8 text-lg">
-            You can start by picking one of the topics below 👇
+            You can start by picking one of the topics below 
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">

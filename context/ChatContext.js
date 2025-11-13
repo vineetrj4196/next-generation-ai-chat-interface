@@ -15,7 +15,6 @@ export function ChatProvider({ children }) {
     const id = uuid();
     const helperMsg = {
       role: "system",
-      content: "Welcome! Choose a question below to start the chat.",
     };
 
     const newChat = {
