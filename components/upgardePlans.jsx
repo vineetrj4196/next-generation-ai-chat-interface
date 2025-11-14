@@ -35,7 +35,7 @@ export default function ProfileFooter({ open }) {
           onClick={() => setModalOpen(true)}
         >
           <Icon icon="gg:profile" width={28} height={28} />
-          {open && <span className="font-medium truncate">Vineet RJ</span>}
+          {open && <span className="font-medium truncate">Manish</span>}
         </div>
 
         {open && (

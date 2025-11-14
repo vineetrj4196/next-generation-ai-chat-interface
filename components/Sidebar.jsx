@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 import ProfileFooter from "./upgardePlans";
 
 export default function Sidebar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const { chats, createNewChat } = useChat();
 
