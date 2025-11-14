@@ -92,7 +92,7 @@ export default function CanvasView() {
               className={`rounded-xl p-4 max-w-[75%] break-words ${
                 m.role === "user"
                   ? "bg-[var(--color-primary)] text-white shadow-md"
-                  : "bg-[var(--color-card)] border border-[var(--color-border)]"
+                  : ""
               }`}
             >
               {/* FILE + MESSAGE RENDERING LOGIC */}
